@@ -1,13 +1,22 @@
 #pragma once
-
 #include "ofMain.h"
+#include "ofApp.h"
+#include <iostream>
+#include <fstream>
+#include <string>
 
 class ofApp : public ofBaseApp{
 
 	public:
+		
 		void setup();
 		void update();
 		void draw();
+
+		int tweetCount = 0;
+		
+		string line;
+		ifstream tweetList;
 
 		void keyPressed(int key);
 		void keyReleased(int key);
