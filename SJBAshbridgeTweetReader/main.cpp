@@ -8,6 +8,7 @@ using namespace std;
 
 		string line;
 		int count;
+		int offset;
 		int tweetCount = 0;
 		ifstream tweetList;
 		tweetList.open("sampleTweets.csv");
@@ -15,15 +16,20 @@ using namespace std;
 		cout << "GUIDE:" << endl;
 		cout << endl;
 		cout << "Count all Tweets in the data set - 1" << endl;
-		cout << "Count Tweets mentioning the word 'Money' - 2" << endl;
+		cout << "Count Tweets mentioning 'Money' - 2" << endl;
+		cout << "Count Tweets about politics - 3" << endl;
+		cout << "Count and display Tweets mentioning 'Paris' - 4" << endl;
+		cout << "Count and display Tweets mentioning 'DreamWorks' - 5" << endl;
+		cout << "Count and display Tweets mentioning 'Uber' - 6" << endl;
 		cout << endl;
 		cout << "Input: ";
 
 		cin >> count;
 
-		if (count == 1) {
+		cout << "Option " << count << " selected. Counting Tweets..." << endl;
+		cout << endl;
 
-			cout << "Option 1 selected. Counting Tweets..." << endl;
+		if (count == 1) {
 
 			if (tweetList.good()) {
 
@@ -35,21 +41,87 @@ using namespace std;
 		}
 		else if (count == 2) {
 
-			int offset = 0;
-			cout << "Option 2 selected. Counting Tweets..." << endl;
+			offset = 0;
 
 			if (tweetList.good()) {
 
 				while (!tweetList.eof()) {
 					while (getline(tweetList, line)) {
-						if ((offset = line.find("money", 0)) != string::npos) {
-							tweetCount++;
-						}
-						else if ((offset = line.find("Money", 0)) != string::npos) {
+						if ((offset = line.find("money", 0)) != string::npos || (offset = line.find("Money", 0)) != string::npos) {
 							tweetCount++;
 						}
 					}
 				}
+			}
+
+		}
+		else if (count == 3) {
+
+			offset = 0;
+
+			if (tweetList.good()) {
+
+				while (!tweetList.eof()) {
+					while (getline(tweetList, line)) {
+						if ((offset = line.find("brexit", 0)) != string::npos || (offset = line.find("Brexit", 0)) != string::npos) {
+							tweetCount++;
+						}
+					}
+				}
+			}
+
+		}
+		else if (count == 4) {
+
+			offset = 0;
+
+			if (tweetList.good()) {
+
+				while (!tweetList.eof()) {
+					while (getline(tweetList, line)) {
+						if ((offset = line.find("paris", 0)) != string::npos || (offset = line.find("Paris", 0)) != string::npos) {
+							tweetCount++;
+							cout << line << endl;
+						}
+					}
+				}
+
+			}
+
+		}
+		else if (count == 5) {
+
+			offset = 0;
+
+			if (tweetList.good()) {
+
+				while (!tweetList.eof()) {
+					while (getline(tweetList, line)) {
+						if ((offset = line.find("dreamworks", 0)) != string::npos || (offset = line.find("DreamWorks", 0)) != string::npos) {
+							tweetCount++;
+							cout << line << endl;
+						}
+					}
+				}
+
+			}
+
+		}
+		else if (count == 6) {
+
+			offset = 0;
+
+			if (tweetList.good()) {
+
+				while (!tweetList.eof()) {
+					while (getline(tweetList, line)) {
+						if ((offset = line.find("uber", 0)) != string::npos || (offset = line.find("Uber", 0)) != string::npos) {
+							tweetCount++;
+							cout << line << endl;
+						}
+					}
+				}
+
 			}
 
 		}
