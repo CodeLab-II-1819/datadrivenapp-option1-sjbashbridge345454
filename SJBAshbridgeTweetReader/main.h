@@ -4,3 +4,5 @@
 #include <string>
 
 void startMenu();
+int optionSelect(int count);
+void output();
