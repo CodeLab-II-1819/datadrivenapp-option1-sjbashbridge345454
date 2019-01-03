@@ -3,6 +3,7 @@
 #include <fstream>
 #include <string>
 
-void startMenu();
-int optionSelect(int count);
+void guide();
+int optionSelect(char count);
 void output();
+void results();
