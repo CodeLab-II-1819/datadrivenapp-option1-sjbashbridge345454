@@ -33,21 +33,22 @@ using namespace std;
 		cout << "Option " << count << " selected. Counting Tweets..." << endl;
 		cout << endl;
 
-		if (count == 1) {
+		if (tweetList.good()) {
 
-			if (tweetList.good()) {
+			switch (count) {
+
+			case 1:
 
 				while (!tweetList.eof()) {
 					getline(tweetList, line);
 					tweetCount++;
 				}
-			}
-		}
-		else if (count == 2) {
 
-			offset = 0;
+				break;
 
-			if (tweetList.good()) {
+			case 2:
+
+				offset = 0;
 
 				while (!tweetList.eof()) {
 					while (getline(tweetList, line)) {
@@ -56,14 +57,12 @@ using namespace std;
 						}
 					}
 				}
-			}
 
-		}
-		else if (count == 3) {
+				break;
 
-			offset = 0;
+			case 3:
 
-			if (tweetList.good()) {
+				offset = 0;
 
 				while (!tweetList.eof()) {
 					while (getline(tweetList, line)) {
@@ -72,14 +71,12 @@ using namespace std;
 						}
 					}
 				}
-			}
 
-		}
-		else if (count == 4) {
+				break;
 
-			offset = 0;
+			case 4:
 
-			if (tweetList.good()) {
+				offset = 0;
 
 				while (!tweetList.eof()) {
 					while (getline(tweetList, line)) {
@@ -90,14 +87,11 @@ using namespace std;
 					}
 				}
 
-			}
+				break;
 
-		}
-		else if (count == 5) {
+			case 5:
 
-			offset = 0;
-
-			if (tweetList.good()) {
+				offset = 0;
 
 				while (!tweetList.eof()) {
 					while (getline(tweetList, line)) {
@@ -108,14 +102,11 @@ using namespace std;
 					}
 				}
 
-			}
+				break;
 
-		}
-		else if (count == 6) {
+			case 6:
 
-			offset = 0;
-
-			if (tweetList.good()) {
+				offset = 0;
 
 				while (!tweetList.eof()) {
 					while (getline(tweetList, line)) {
@@ -126,14 +117,11 @@ using namespace std;
 					}
 				}
 
-			}
+				break;
 
-		}
-		else if (count == 7) {
+			case 7:
 
-			offset = 0;
-
-			if (tweetList.good()) {
+				offset = 0;
 
 				while (!tweetList.eof()) {
 					while (getline(tweetList, line)) {
@@ -144,59 +132,56 @@ using namespace std;
 					}
 				}
 
-			}
+				break;
 
-		}
-		else if (count == 8) {
+			case 8:
 
-		offset = 0;
+				offset = 0;
 
-		if (tweetList.good()) {
-
-			while (!tweetList.eof()) {
-				while (getline(tweetList, line)) {
-					if ((offset = line.find("00:00,", 0)) != string::npos) {
-						tweetCount++;
+				while (!tweetList.eof()) {
+					while (getline(tweetList, line)) {
+						if ((offset = line.find("00:00,", 0)) != string::npos) {
+							tweetCount++;
+						}
 					}
 				}
-			}
 
-		}
+				break;
 
-		}
-		else if (count == 9) {
+			case 9:
 
-		offset = 0;
+				offset = 0;
 
-		if (tweetList.good()) {
-
-			while (!tweetList.eof()) {
-				while (getline(tweetList, line)) {
-					if ((offset = line.find("12:00,", 0)) != string::npos) {
-						tweetCount++;
+				while (!tweetList.eof()) {
+					while (getline(tweetList, line)) {
+						if ((offset = line.find("12:00,", 0)) != string::npos) {
+							tweetCount++;
+						}
 					}
 				}
-			}
 
-		}
+				break;
 
-		}
-		else if (count == 0) {
+			case 0:
 
-		offset = 0;
+				offset = 0;
 
-		if (tweetList.good()) {
-
-			while (!tweetList.eof()) {
-				while (getline(tweetList, line)) {
-					if ((offset = line.find("Japan", 0)) != string::npos || (offset = line.find("Tokyo", 0)) != string::npos || (offset = line.find("Kyoto", 0)) != string::npos || (offset = line.find("Osaka", 0)) != string::npos) {
-						tweetCount++;
-						cout << line << endl;
+				while (!tweetList.eof()) {
+					while (getline(tweetList, line)) {
+						if ((offset = line.find("Japan", 0)) != string::npos || (offset = line.find("Tokyo", 0)) != string::npos || (offset = line.find("Kyoto", 0)) != string::npos || (offset = line.find("Osaka", 0)) != string::npos) {
+							tweetCount++;
+							cout << line << endl;
+						}
 					}
 				}
-			}
 
-		}
+				break;
+
+			default:
+				cout << "INPUT INVALID" << endl;
+				break;
+
+			}
 
 		}
 
