@@ -31,18 +31,23 @@ void guide() {
 
 int optionSelect(char count) {
 
+	string userSearch;
 	string line;
 	int offset;
 	ifstream tweetList;
 	int tweetCount = 0;
 
 	tweetList.open("sampleTweets.csv");
-	
+
 	do {
 
-		cin >> count;
+		cin >> userSearch;
+		count = userSearch[0];
 
-		cout << "Option " << count << " selected. Counting Tweets..." << endl;
+		if (count == '0' || count == '1' || count == '2' || count == '3' || count == '4' || count == '5' || count == '6' || count == '7' || count == '8' || count == '9'){
+			cout << "Option " << count << " selected. Counting Tweets..." << endl;
+		}
+
 		cout << endl;
 
 		if (tweetList.good()) {
@@ -198,7 +203,7 @@ int optionSelect(char count) {
 
 		}
 
-	}while (count != '0' && count != '1' && count != '2' && count != '3' && count != '4' && count != '5' && count != '6' && count != '7' && count != '8' && count != '9');
+	} while (count != '0' && count != '1' && count != '2' && count != '3' && count != '4' && count != '5' && count != '6' && count != '7' && count != '8' && count != '9');
 
 	return tweetCount;
 
@@ -224,7 +229,8 @@ void results() {
 	do {
 		if (repeat == "G" || repeat == "g") {
 			guide();
-		}else if (repeat == "S" || repeat == "s") {
+		}
+		else if (repeat == "S" || repeat == "s") {
 			cout << "Ready to search!" << endl;
 			cout << "Input: ";
 		}
