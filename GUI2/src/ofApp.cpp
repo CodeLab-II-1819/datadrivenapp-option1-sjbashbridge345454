@@ -3,6 +3,12 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 
+	welcomeTXT.load("NixieOne.ttf", 20);
+
+	colourA.set(55, 125, 255);
+
+	welcome = "An Ashbridge Industries Product";
+
 }
 
 //--------------------------------------------------------------
@@ -12,6 +18,9 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+
+	welcomeTXT.drawString(welcome, 5, ofGetHeight() - welcomeTXT.stringHeight(welcome));
+
 
 }
 
@@ -34,7 +43,7 @@ void ofApp::mouseMoved(int x, int y ){
 void ofApp::mouseDragged(int x, int y, int button){
 
 }
-
+ 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
 
