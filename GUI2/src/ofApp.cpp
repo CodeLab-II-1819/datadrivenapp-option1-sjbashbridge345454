@@ -19,7 +19,7 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
 
-	welcomeTXT.drawString(welcome, 5, ofGetHeight() - welcomeTXT.stringHeight(welcome));
+	welcomeTXT.drawString(welcome, ofGetWidth()/2, 100 - welcomeTXT.stringHeight(welcome));
 
 
 }
