@@ -2,6 +2,8 @@
 
 #include "ofMain.h"
 #include "ofxJSON.h"
+#include "ofxGui.h"
+#include <sstream>
 #include <string>
 
 class ofApp : public ofBaseApp{
@@ -25,8 +27,13 @@ class ofApp : public ofBaseApp{
 
 		bool parseSuccess;
 
+		int pad;
+		int width;
+		int height;
+
 		ofColor colourA, colourB;
-		string welcome;
-		ofTrueTypeFont welcomeTXT;
+		string welcome, welcome2, option;
+		string options[10];
+		ofTrueTypeFont welcomeTXT, optionTXT;
 
 };
