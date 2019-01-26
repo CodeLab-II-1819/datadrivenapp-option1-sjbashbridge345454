@@ -6,34 +6,30 @@
 #include <sstream>
 #include <string>
 
-class ofApp : public ofBaseApp{
+class ofApp : public ofBaseApp {
 
-	public:
-		void setup();
-		void update();
-		void draw();
+public:
 
-		void keyPressed(int key);
-		void keyReleased(int key);
-		void mouseMoved(int x, int y );
-		void mouseDragged(int x, int y, int button);
-		void mousePressed(int x, int y, int button);
-		void mouseReleased(int x, int y, int button);
-		void mouseEntered(int x, int y);
-		void mouseExited(int x, int y);
-		void windowResized(int w, int h);
-		void dragEvent(ofDragInfo dragInfo);
-		void gotMessage(ofMessage msg);
+	//Declares functions 'setup', 'update' and 'draw'
+	void setup();
+	void update();
+	void draw();
 
-		bool parseSuccess;
+	bool parseSuccess;
 
-		int pad;
-		int width;
-		int height;
+	//integers 'pad', 'width' and 'height', declared here, are determined by the window size
+	int pad;
+	int width;
+	int height;
 
-		ofColor colourA, colourB;
-		string welcome, welcome2, option;
-		string options[10];
-		ofTrueTypeFont welcomeTXT, optionTXT;
+	//Declares two colours, 'colourA' and 'colourB'
+	ofColor colourA, colourB;
+
+	//Declares various new strings
+	string welcome, welcome2, option;
+	string options[10];
+
+	//Declares new fonts
+	ofTrueTypeFont welcomeTXT, optionTXT;
 
 };
